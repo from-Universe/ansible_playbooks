@@ -1,0 +1,17 @@
+---
+# This grour_vars file is made for Ecorouters wich are based on Linux
+# Thus they will have some gather_facts like a linux
+# As we do not have any specific ansible module for this routers 
+# will use ansible.netcommon.network_cli as Ecorouter cli is much like a Cisco one.
+# Check further some addidionsl non_ansible_vars to diff from real Cisco IOS and EcoRouterOS
+# DO NOT USE PLAIN-TEXT PASSWORDS IN ANY PRODUCTION ENVIRONMENT
+
+ansible_connection:    ansible.netcommon.network_cli
+ansible_network_os:    cisco.ios.ios
+ansible_user:          admin
+ansible_password:      admin
+absible_become:        true
+ansible_become_method: enable
+
+# Not_an_Ansible vars
+true_ios:              EcoRouterOS

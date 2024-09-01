@@ -1,0 +1,15 @@
+# This a group_var file for legacy Cisco IOS (not XE, nor XR)
+# You need to configure ssh v2 and user name/password, as well as ssh keys 
+# to get an access to cisco's cli. 
+# For LAB purpose only we use cisco/cisco login and password
+# DO NOT USE PLAIN-TEXT PASSWORDS IN ANY PROFUCTION ENVIRONMENT
+
+ansible_connection:    ansible.netcommon.network_cli
+ansible_user:          cisco
+ansible_password:      cisco
+ansible_become:        yes
+ansible_become_method: enable
+ansible_network_os:    cisco.ios.ios
+
+# This is a not_an_ansible var to cope with other verndors' cisco-like CLIs 
+true_ios:              ios

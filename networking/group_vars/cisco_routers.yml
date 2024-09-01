@@ -1,0 +1,18 @@
+# This a group_var file for Cisco IOS-XE (also good for IOSv)
+# In real environment this IOS-XE works on Cisco CSRv, Catalyst 8k, 9k devices
+# You need to configure ssh v2 and user name/password, as well as ssh keys 
+# to get an access to cisco's cli. 
+# For LAB purpose only we use cisco/cisco login and password
+# DO NOT USE PLAIN-TEXT PASSWORDS IN ANY PROFUCTION ENVIRONMENT
+
+ansible_connection:    ansible.netcommon.network_cli
+ansible_user:          cisco
+ansible_password:      cisco
+ansible_become:        yes
+ansible_become_method: enable
+ansible_network_os:    cisco.ios.ios
+
+# This is not-an-ansible vars to cope with multi-vendors environment
+# supporting cisco-like CLIs
+# This will not be found in any gather_facts module
+true_ios:              iosxe
